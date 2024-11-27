@@ -1,29 +1,16 @@
-import Header from "./components/Header";
-import { Routes, Route } from "react-router-dom";
-import Home from "./pages/Home";
-import Login from "./pages/Login";
-import Signup from "./pages/Signup";
-import Chat from "./pages/Chat";
-import NotFound from "./pages/NotFound";
-import { useAuth } from "./context/AuthContext";
-import Footer from "./components/footer/Footer";
+import { useState } from 'react'
+import reactLogo from './assets/react.svg'
+import viteLogo from '/vite.svg'
+import './App.css'
+
 function App() {
-  const auth = useAuth();
+  const [count, setCount] = useState(0)
 
   return (
     <main>
-      <Header />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<Signup />} />
-        {auth?.isLoggedIn && auth.user && (
-          <Route path="/chat" element={<Chat />} />
-        )}
-        <Route path="*" element={<NotFound />} />
-      </Routes>
+      
     </main>
-  );
+  )
 }
 
-export default App;
+export default App
